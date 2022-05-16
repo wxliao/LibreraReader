@@ -100,6 +100,12 @@ android {
 
     }
 
+    externalNativeBuild {
+        ndkBuild{
+            path 'src/main/cpp/Android-1.19.0.mk'
+        }
+    }
+
 
     flavorDimensions "version"
     productFlavors {
