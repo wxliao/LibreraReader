@@ -423,8 +423,20 @@ public class VerticalModeController extends DocumentController {
 
             final ArrayList<PointF> quadPoints = new ArrayList<PointF>();
 
+
+            ArrayList<RectF> rects = new ArrayList<RectF>();
+            RectF prevRect = null;
             for (TextWord text : texts) {
                 RectF rect = text.getOriginal();
+                if (prevRect!=null && prevRect.top == rect.top && prevRect.bottom== rect.bottom) {
+                    prevRect.union(rect);
+                    continue;
+                }
+                prevRect = new RectF(rect);
+                rects.add(prevRect);
+            }
+
+            for (RectF rect : rects) {
                 quadPoints.add(new PointF(rect.left, rect.bottom));
                 quadPoints.add(new PointF(rect.right, rect.bottom));
                 quadPoints.add(new PointF(rect.right, rect.top));
@@ -446,6 +458,7 @@ public class VerticalModeController extends DocumentController {
 
         }
     }
+
 
     @Override
     public void onAutoScroll() {

@@ -38,9 +38,13 @@ LOCAL_ARM_MODE  := $(APP_ARM_MODE)
 
 LOCAL_MODULE := mupdf_core
 
+LOCAL_STATIC_LIBRARIES := webpmux webpdemux webp
+
+
 ifdef FZ_ENABLE_GPRF
 LOCAL_CFLAGS += -DFZ_ENABLE_GPRF
 endif
+
 
 LOCAL_C_INCLUDES := \
 	$(MUPDF_PATH)/include \
@@ -54,6 +58,7 @@ LOCAL_C_INCLUDES := \
 	$(MUPDF_PATH)/thirdparty/mujs \
 	$(MUPDF_PATH)/thirdparty/openjpeg/src/lib/openjp2 \
 	$(MUPDF_PATH)/thirdparty/zlib \
+
 
 LOCAL_CFLAGS := \
 	-ffunction-sections -fdata-sections \
@@ -69,6 +74,7 @@ LOCAL_SRC_FILES += \
 	$(wildcard $(MUPDF_PATH)/source/gprf/*.c) \
 	$(wildcard $(MUPDF_PATH)/source/html/*.c) \
 	$(wildcard $(MUPDF_PATH)/generated/*.c) \
+
 
 include $(BUILD_STATIC_LIBRARY)
 

@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 
 
-### 1.16.1
-#./link_to_mupdf_1.16.1.sh
-./link_to_mupdf_1.19.0.sh
+### 1.20.0
+./link_to_mupdf_1.20.0.sh
 
 cd ../
 

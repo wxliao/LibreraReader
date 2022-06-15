@@ -7,25 +7,19 @@
 cd ../
 
 ./gradlew clean incVersion
-
+./gradlew assembleLibreraRelease
 ./gradlew assembleProRelease
-/.gradlew assembleBetaRelease
+./gradlew assembleEpub_readerRelease
+
+### 1.20.0
+cd Builder
+./link_to_mupdf_1.20.0.sh
+cd ../
 ./gradlew assemblePdf_v2Release
 ./gradlew assembleEbookaRelease
 ./gradlew assembleTts_readerRelease
-./gradlew assembleLibreraRelease
 ./gradlew assemblePdf_classicRelease
-./gradlew assembleEpub_readerRelease
-./gradlew assembleHuaweiRelease
-
-
-### 1.16.1
-cd Builder
-./link_to_mupdf_1.16.1.sh
-cd ../
-./gradlew assembleAlphaRelease
 ./gradlew assembleFdroidRelease
-
 
 ./gradlew copyApks -Pbeta
 ./gradlew -stop
