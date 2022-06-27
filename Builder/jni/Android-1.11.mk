@@ -5,9 +5,9 @@ MUPDF_ROOT := $(realpath $(LOCAL_PATH)/../../..)
 
 
 include $(TOP_LOCAL_PATH)/libmobi-0.11/Android.mk
-include $(TOP_LOCAL_PATH)/hqx/Android.mk
-include $(TOP_LOCAL_PATH)/djvu/Android.mk
-include $(TOP_LOCAL_PATH)/antiword/Android.mk
+include $(TOP_LOCAL_PATH)/libhqx-1.2/Android.mk
+include $(TOP_LOCAL_PATH)/libdjvu-3.5.28/Android.mk
+include $(TOP_LOCAL_PATH)/libantiword-1.3.1/Android.mk
 include $(TOP_LOCAL_PATH)/libwebp-1.2.2/Android.mk
 
 include $(TOP_LOCAL_PATH)/MuPDF-1.11.mk
@@ -16,16 +16,18 @@ include $(CLEAR_VARS)
 
 LOCAL_CFLAGS    := $(APP_CFLAGS)
 LOCAL_CPPFLAGS  := $(APP_CPPFLAGS)
+
 LOCAL_ARM_MODE  := $(APP_ARM_MODE)
+LOCAL_ARM_NEON := true
 
 LOCAL_C_INCLUDES := \
 	$(MUPDF_ROOT)/include \
 	$(MUPDF_ROOT)/source/fitz \
 	$(MUPDF_ROOT)/source/pdf \
-	$(TOP_LOCAL_PATH)/djvu/include \
+	$(TOP_LOCAL_PATH)/libdjvu-3.5.28/src \
 	$(TOP_LOCAL_PATH)/libmobi-0.9/src \
 	$(TOP_LOCAL_PATH)/libmobi-0.9/tools \
-    $(TOP_LOCAL_PATH)/hqx \
+	$(TOP_LOCAL_PATH)/libhqx-1.2 \
 	$(TOP_LOCAL_PATH)
     	
 LOCAL_CFLAGS += -DHAVE_ANDROID
