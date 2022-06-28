@@ -1,7 +1,7 @@
 LOCAL_PATH := $(call my-dir)
 TOP_LOCAL_PATH := $(LOCAL_PATH)
 
-MUPDF_ROOT := $(realpath $(LOCAL_PATH)/../../..)
+MUPDF_ROOT := $(realpath $(LOCAL_PATH)/../mupdf-1.20.0)
 
 
 include $(TOP_LOCAL_PATH)/libmobi-0.11/Android.mk

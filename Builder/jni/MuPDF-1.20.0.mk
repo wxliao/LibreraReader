@@ -20,7 +20,7 @@
 # regardless of where it is called from.
 
 LOCAL_PATH := $(call my-dir)
-MUPDF_PATH := $(realpath $(LOCAL_PATH)/../../..)
+MUPDF_PATH := $(realpath $(LOCAL_PATH)/../mupdf-1.20.0)
 
 ifeq ($(TARGET_ARCH_ABI),arm64-v8a)
 HAVE_NEON := yes

@@ -102,7 +102,7 @@ android {
 
     externalNativeBuild {
         ndkBuild{
-            path 'src/main/cpp/Android-1.20.0-rc2.mk'
+            path '../Builder/jni/Android-1.20.0.mk'
         }
     }
 
